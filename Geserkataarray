@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class Geserkataarray {
+    public static void main(String[] args) {
+
+        int shift = 3;
+        String kalimat = "saya belajar pemrograman hari rabu";
+
+
+        System.out.println("Input:"+kalimat);
+        System.out.println("Jumlah Pergeseran: " + shift);
+        System.out.println("output: " + kalimat);
+
+
+        String[] kata = kalimat.split(" ");
+
+
+        int jumlahKata = kata.length;
+
+        shift = shift % jumlahKata;
+
+
+        String[] hasil = new String[jumlahKata];
+
+        for (int i = 0; i < jumlahKata; i++) {
+
+            hasil[i] = kata[(i + shift) % jumlahKata];
+        }
+
+
+        String kalimatBaru = String.join(" ", hasil);
+
+
+        System.out.println("rabu saya belajar pemrograman hari: " + kalimatBaru);
+    }
+}
